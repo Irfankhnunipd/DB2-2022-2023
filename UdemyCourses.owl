@@ -1,0 +1,270 @@
+@prefix : <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses> .
+
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses> rdf:type owl:Ontology ;
+                                                                    rdfs:comment "This is an ontology abour Udemy couses"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#attends
+:attends rdf:type owl:ObjectProperty ;
+         rdfs:domain :Person ;
+         rdfs:range :Course ;
+         rdfs:comment "Instructor teaches a course"@en .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#belongsTo
+:belongsTo rdf:type owl:ObjectProperty ;
+           rdfs:domain :Course ;
+           rdfs:range :Deparment ;
+           rdfs:comment "Course belongs to a Department"@en .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#gives
+:gives rdf:type owl:ObjectProperty ;
+       rdfs:domain :Subscriber ;
+       rdfs:range :Review ;
+       rdfs:comment "Subsriber gives review"@en .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#has
+:has rdf:type owl:ObjectProperty ;
+     rdfs:domain :Course ;
+     rdfs:range :Review .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#subscribes
+:subscribes rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :attends ;
+            rdfs:domain :Subscriber ;
+            rdfs:range :Course ;
+            rdfs:comment "Subscriber subscribes to courses"@en .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#teaches
+:teaches rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :attends ;
+         rdfs:domain :Instructor ;
+         rdfs:range :Course ;
+         rdfs:comment "Instructor teaches a course"@en .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#worksFor
+:worksFor rdf:type owl:ObjectProperty ;
+          rdfs:domain :Instructor ;
+          rdfs:range :Deparment .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#birthdate
+:birthdate rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#contentDuration
+:contentDuration rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Course ;
+                 rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#courseID
+:courseID rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Course ;
+          rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#courseTitle
+:courseTitle rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Course ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#courses
+:courses rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Instructor ;
+         rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#description
+:description rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Review ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#education
+:education rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Instructor ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#email
+:email rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Subscriber ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#level
+:level rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Course ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Person ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#numberOFStudents
+:numberOFStudents rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Instructor ;
+                  rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#numberOfLectures
+:numberOfLectures rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Course ;
+                  rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#numberOfReviews
+:numberOfReviews rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Course ;
+                 rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#numberOfSubscribers
+:numberOfSubscribers rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Course ;
+                     rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#price
+:price rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Course ;
+       rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#publishedTimestamp
+:publishedTimestamp rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Course ;
+                    rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#qualification
+:qualification rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Instructor ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#rating
+:rating rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Course ;
+        rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#surname
+:surname rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Person ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#url
+:url rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Course ;
+     rdfs:range xsd:anyURI .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#username
+:username rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Subscriber ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#rating(onReviews)
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#rating(onReviews)> rdf:type owl:DatatypeProperty ;
+                                                                                     rdfs:domain :Review ;
+                                                                                     rdfs:range xsd:float .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Course
+:Course rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Deparment
+:Deparment rdf:type owl:Class ;
+           owl:disjointWith :Review .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Instructor
+:Instructor rdf:type owl:Class ;
+            rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Person
+:Person rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Review
+:Review rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Subscriber
+:Subscriber rdf:type owl:Class ;
+            rdfs:subClassOf :Person .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Bitcoin_or_How_I_Learned_to_Stop_Worrying_and_Love_Crypto
+:Bitcoin_or_How_I_Learned_to_Stop_Worrying_and_Love_Crypto rdf:type owl:NamedIndividual ,
+                                                                    :Course ;
+                                                           :contentDuration 8 ;
+                                                           :courseID 49798 ;
+                                                           :level "All Levels" ;
+                                                           :numberOfLectures 24 ;
+                                                           :numberOfReviews 936 ;
+                                                           :numberOfSubscribers 65576 ;
+                                                           :price "0.0"^^xsd:float ;
+                                                           :publishedTimestamp "2013-04-20T02:25:22Z"^^xsd:dateTime ;
+                                                           :url "https://www.udemy.com/bitcoin-or-how-i-learned-to-stop-worrying-and-love-crypto/"^^xsd:anyURI .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Bussines_Finance
+:Bussines_Finance rdf:type owl:NamedIndividual ,
+                           :Deparment .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Graphic_Design
+:Graphic_Design rdf:type owl:NamedIndividual ,
+                         :Deparment .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Musical_Instrument
+:Musical_Instrument rdf:type owl:NamedIndividual ,
+                             :Deparment .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Web_Development
+:Web_Development rdf:type owl:NamedIndividual ,
+                          :Deparment .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
