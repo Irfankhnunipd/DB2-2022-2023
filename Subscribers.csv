@@ -1,0 +1,61 @@
+subscriber_id,name,surname,birthday,email,username,courses
+11,Vedula ,Kamesh B,4/27/2000,vedulakamesh@gmail.com,Vedula Kamesh B.,Master ExpressJS to Build Web Apps with NodeJS&JavaScript
+12,Anagbado,Urey,6/30/1999,anagbadou.@gmail.com,Anagbado U.,Adobe Experience Manager CMS Basics
+13,Rian ,Borsari ,1/28/1990,rianborsaris.@gmail.com,Rian Borsari S.,Graphic Design - An Overview of the Field
+14,Awais,Brend,,awais@gmail.com,Awais,Essentials of JavaScript Practice Coding Exercises Tips
+15,Liam, Mors,6/15/2002,liamm@gmail.com,Liam M.,Make Electronic Music with the iPad
+16,Williams,Ajayi,3/14/2000,williamsajayi@gmail.com,Williams Ajayi B.,"Bluegrass Guitar Essentials: Webisodes 13, 14, & 15"
+17,Konstantinos , Kalemi,3/27/1996,konstantinosk@gmail.com,Konstantinos K.,
+18,Catherine,Kate Adam,9/17/1997,catherinekatea@gmail.com,Catherine Kate A.,Ukulele 3:  Intermediate
+19,Raj,Monda,5/16/2001,rajmonda@gmail.com,Raj M.,
+20,Pham,Huynh,11/7/2002,phamhuynh@gmail.com,Pham Huynh H.,Accounting & Financial Statement Analysis: Complete Training
+21,Christopher , Eleni,5/14/2006,christopher@gmail.com,Christopher E.,Learn Web Designing & HTML5/CSS3 Essentials in 4-Hours
+22,Catherine, Alan,,catherine.kate@gmail.com,Catherine Kate A.,Learn Web Designing & HTML5/CSS3 Essentials in 4-Hours
+23,Wayan,Smith,4/12/1998,iwayan@gmail.com,I Wayan S.,Stock Market Investing for Beginners
+24,Brian,Gordan,,brian@gmail.com,,
+25,Mohamed,Abdullah,7/22/1993,mohamedabdullah@gmail.com,Mohamed Abdullah H.,Professional Logo Design in Adobe Illustrator
+26,Iryna, Yui,,iryna@gmail.com,Iryna Y.,Options Trading Basics (3-Course Bundle)
+27,Khaled,West,,khaled@gmail.com,Khaled W.,The Original Complete Web Developer Course.
+28,Hafid,Dane,5/12/1999,hafid@gmail.com,Hafid D.,AngularJS For Beginners
+29,Bhakti, Pann,,bhakti@gmail.com,Bhakti P.,"Introduction to Finance, Accounting, Modeling and Valuation"
+30,Soumodip,Greg,4-May,soumodip@gmail.com,Soumodip G.,Bitcoin For Beginners: Your Quick Start Guide To Bitcoin
+31,Andy,James,,andyj@gmail.com,,Learn to Trade for Profit: Find and Trade Winning Stocks
+32,Rody ,Kalend,,rodykalend@gmail.com,Rody kalend K.,Forex Robots: Expect To Earn 175% P.A. Forex Robot Included!
+33,Marco,Charls,5/4/1999,marco@gmail.com,Marco C.,Beginners Binary Options Course
+34,Alison,Lonsen,,alison@gmail.com,Alison L.,Finance - Ratios Analysis & Interpretations
+35,Naukhez,Zakk,4/12/1998,naukhez@gmail.com,Naukhez Z.,Create A Business From Home Trading Stocks Today In 2017
+36,Paul,Brown,3/27/1996,pauljb@gmail.com,Paul J B.,Options Trading Basics (3-Course Bundle)
+37,Byron, Eklem,9/17/1997,byrone@gmail.com,Byron E.,Photoshop - Aprende a Transformar Im√°genes
+38,Tahseen,Samir,5/16/2001,tahseens@gmail.com,Tahseen S.,Back In Black the AC/DC Classic Rock Track
+39,Martha Olivia ,Aguilera,10/6/1985,marthaoliviaaguilera@gmail.com,Martha Olivia Aguilera A.,Make Electronic Music with the iPad
+40,Johan Josue ,Chacon,,johanjosuechacon@gmail.com ,Johan Josue Chacon C.,Coaching Course: Rhythm Instruction for Music Educators P2
+41,Avni ,Tannty,5/28/1999,avnit@gmail.com,Avni T.,Learn Pirates of the Caribbean by Ear on the Piano
+42,Vishva ,Alanny,4/12/1998,vishva@gmail.com,Vishva A.,4 Week Rhythm Mastery
+43,Benn,Alfred,,benn.alfred@gmail.com,,Learn Ruby on Rails: Stripe Payment Processing
+44,Divine ,Nord,4/18/1989,divinen@gmail.com,Divine N.,Expert Guide : Mastering Functions in JavaScript !
+45,Mayur ,Vulaj,,mayurv@gmail.com,Mayur V.,How to Create A Website: An HTML Tutorial and CSS Tutorial
+46,North ,Lakaj,5/28/1999,northlakaj@gmail.com,Udemy User,Introduction to Financial Modeling
+47,Kristian,Bardhaj ,4/12/1998,kristian@gmail.com,Kristian B.,"PHP for Beginners -Become a PHP Master - Project Included, EMMET Faster HTML & CSS workflow - Best Tool For Developers"
+48,Sarah,Smith,,sarahsmith@gmail.com,Sarah S.,Javascript - From Beginner to Pro-Build real world JS apps
+49,James,Smith,4/18/1989,james@gmail.com,James,Essentials of JavaScript Practice Coding Exercises Tips
+50,Kris,Tasha,6/27/1999,kristasha@gmail.com,Kris,The Complete JavaScript Course: Build a Real-World Project
+51,Beni,Yiu,9/17/1997,beniy@gmail.com,Beni Y.,"Introduction to Web Development: HTML, Become a Certified Web Developer"
+52,Andy,Kala,5/16/2001,andyy@gmail.com,Andyy,Ukulele 3:  Intermediate
+53,Genti,Kalend,4/16/1996,gentikalend@gmail.com,GentiKalend,Guitarra Ac√∫stica en Siete D√≠as
+54,Arjan,Hodo,,arjanh@gmail.com,ArjanHodo,Coaching Bundle: Guitar for Music Educators: Part 2
+55,Ermir,Hysa,,ermirhysa@gmail.com,ErmirHysa,Learn Piano Online-In the Garden Piano Solo
+56,Roland,Bardhi,6/16/2000,rolandbardhi@gmail.com,RolandBardhi,Coaching Bundle: Guitar for Music Educators: Part 1
+57,Alban,Kodra,,alban.kodra@gmail.com,GentiKalend,Learn Ruby on Rails: Stripe Payment Processing
+58,Henry ,Kalaj ,8/11/2000,henrykolaj@gmail.com,Henry .Kalaj ,Expert Guide : Mastering Functions in JavaScript !
+59,Greg ,Karaj,5/12/1999,gregkaraj@gmail.com ,Greg  Karaj,How to Create A Website: An HTML Tutorial and CSS Tutorial
+60,Klaus ,Gjoni,,klausgjonaj@gmail.com,Klaus  Gjoni,Introduction to Financial Modeling
+61,Bernard,James,4-May,bernardjames@gmail.com,Bernard James,"PHP for Beginners -Become a PHP Master - Project Included, The Complete JavaScript Course: Build a Real-World Project"
+62,Endri,Kalemi,,endrikalemi@gmail.com,Endri.Kalemi,Javascript - From Beginner to Pro-Build real world JS apps
+63,Harold,Borsari ,,haroldborsari@gmail.com,Harold,Essentials of JavaScript Practice Coding Exercises Tips
+64,Ana,Maraj,5/4/1999,anamaraj@gmail.com,Ana Maraj,Aprende todos los secretos de la guitarra flamenca
+65,Rosalinda,Fusha,,rosafusha@gmail.com,Rosalinda Fusha,Back In Black the AC/DC Classic Rock Track
+66,Emanuela ,Kola,4/12/1998,emanuelakola@gmail.com,Emanuela .Kola,Make Electronic Music with the iPad
+67,Armela,Bernadi,,armelabernardi@gmail.com,Armela Bernadi,Coaching Course: Rhythm Instruction for Music Educators P2
+68,Hana,Hysaj ,,hanahysay@gmail.com,Hana.Hysaj ,Learn Pirates of the Caribbean by Ear on the Piano
+69,Danjela,Gjonaj,9/22/1998,danjelagjonaj@gmail.com,Danjela Gjonaj,Learn to Play Piano Like a Pro - Easy Piano Course 1
+70,Deni,Manaj,10/6/1985,ddenimanaj@gmail.com,Deni Manaj,4 Week Rhythm Mastery

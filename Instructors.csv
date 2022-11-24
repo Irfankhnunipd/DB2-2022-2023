@@ -1,0 +1,47 @@
+instructor_id,name,surname,date_of_birth,place_of_birth,qualification,education  ,department,nuberOfStudents,courses
+1,Klaudia ,Hasani ,,italy,Web developer ,Informatic Engenieering ,Web Development ,,5
+2,Charles ,Hoskins,4/23/1999,germany,"Entrepreneur, Mathematician and Cryptocurrency Evangelist",,Bussines Finance ,112456,2
+3,Brian ,Göss,,france,"Bitcoin Education Project, Senior Fellow",Economic Informatics ,Bussines Finance ,186798,1
+4,Vincent,Turner,,USA,"Enterprenuer, Social Media Innovator ",Economic Informatics ,Bussines Finance ,34212,3
+5,Bruno,Kalemi,9/18/1999,Denmark,Web developer ,Informatic Engenieering ,Web Development,,
+6,Luca,Mosschini ,1899-05-10,Finland,"Technical Trader, Investor, Chinese Medicine Instructor ",,Bussines Finance ,123123,21
+7,Alan ,B,9/18/1999,Denmark,,Economic Informatics ,,1322,
+8,Sharper,Trades,3/4/1980,USA,"Trading, Investing, Bussiness, Finance ",Bussiness,Bussines Finance ,32423413,28
+9,Chris,Benjamin ,,England,"Instructor, Management Consultant ",Bussiness,Bussines Finance ,45635,78
+10,Rawson ,Uddin,9/17/1999,England,"Graphic Designer, Instructor",,Graphic Design ,23424,15
+11,Kriss,James,,England,,Economic Informatics ,Bussines Finance ,,
+12,Rob,Cubbon ,3-May,England,"Bestseller author, enterprenuer, web and graphic designer",Music,Graphic Design ,23414,20
+13,Lindsay,Marsh ,1899-07-17,italy,"Graphic Designer, Instructor, Adobe ",Infirmatics,Graphic Design ,234143,56
+14,Henry ,,,germany,,Economic Informatics ,Web Development ,,
+15,Daniel Walter,Scott,1899-08-13,france,"Adobe Certified Instructor, Adobe Certified Expert ",,Graphic Design ,321414,34
+16,Phil,Ebiner ,4/12/1998,USA,Top-Rated Instructor ,Music,Graphic Design ,234234,19
+17,Klevis,,,Denmark,,Informatic Engenieering ,,,
+18,Diego ,Davilla,7/22/1993,Finland,"Enterprenuer, Social Media Innovator ",Informatics,Graphic Design ,234324,37
+19,Willian,Carnahan,,USA,"Photographer, Cinematographer",Bussiness,Graphic Design ,314142,2
+20,Romeo ,,1895-10-04,Denmark,,,,,
+21,Sam ,Shimizu-Jones,5/12/1999,Finland,"Photographer, Cinematographer",Bussiness,Graphic Design ,34141,5
+22,Paul,William ,,China,Guitar Teacher ,Music ,Musical Instruments,4524,23
+23,Anna,James,4-May,China,,Informatic Engenieering ,,,
+24,Danja ,Roddrigo ,1895-10-04,italy,,Informatic Engenieering ,,32413,
+25,Andi,Fusha,,germany,Piano teacher,,Musical Instrument ,,2
+26,Brendon ,Mozzales ,5/4/1999,france,,Bussiness,,,
+27,Daniel,Boudreau,,USA,Adobe Specialist ,,Musical Instruments,234124,23
+28,Lesson,Pross,4/12/1998,Denmark,Awarding Winning Instructor ,Informatics,Musical Instruments,235342,23
+29,Rimma,Agbo ,,Finland,Awarding Winning Instructor ,Economic Informatics ,Musical Instruments,324134,6
+30,Will,Trades,1895-10-04,Denmark,,,,,
+31,Caroline ,McCaskey ,9/22/1998,USA,"Violine, Fiddle and piano instructor ",,Musical Instruments,2341,22
+32,Henry ,,10/6/1985,Italy,,Economic Informatics ,,,
+33,Colt ,Steele,,france,Senior web developer,,Web Development,23414,76
+34,Andrei,Neagoie ,5/28/1999,Italy,"Senior web developer, Web designer, Educator",Informatic Engenieering ,Web Development,23413,16
+35,Muhammad ,Ahsan Pervaiz,4/12/1998,Denmark,"Web developer, coding instructor ",,Web Development,3134,25
+36,Diana,,,China,,Music,,,
+37,Brad ,Hussey,4/18/1989,germany,Front End developer ,,Web Development,234134,34
+38,Gordan,Candell,,italy,Web designer ,Bussiness,Web Development,3241,17
+39,Jose ,Portilla,,germany,Senior web developer,Informatic Engenieering ,Web Development,123132,29
+40,Simon,Sez,9/17/1991,france,Senior PHP developer ,Informatic Engenieering ,Web Development,312341,15
+41,Sarah,,4/16/1996,USA,,,,,
+42,Rob,Percival,,Denmark,Senior C++ developer ,Informatics,Web Development,13123,70
+43,Angela,Yu,1895-10-04,Finland,"Developer, Lead Instructor",Economic Informatics ,Web Development,455245,19
+44,Kobalt ,Taulien ,6/16/2000,China,,Bussiness,,5223,12
+45,Rian,Borasari,,China ,Web developer ,Informatics,,,
+46,Anagbado,U.,8/11/2000,China,Graphic Designer,Economic Informatics ,Graphic Designer ,,23
