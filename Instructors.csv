@@ -1,4 +1,4 @@
-instructor_id,name,surname,date_of_birth,place_of_birth,qualification,education  ,department,nuberOfStudents,courses
+instructor_id,name,surname,birthdate,place_of_birth,qualification,education  ,department,nuberOfStudents,courses
 1,Klaudia ,Hasani ,,italy,Web developer ,Informatic Engenieering ,Web Development ,,5
 2,Charles ,Hoskins,4/23/1999,germany,"Entrepreneur, Mathematician and Cryptocurrency Evangelist",,Bussines Finance ,112456,2
 3,Brian ,Göss,,france,"Bitcoin Education Project, Senior Fellow",Economic Informatics ,Bussines Finance ,186798,1
