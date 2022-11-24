@@ -14,28 +14,36 @@
 #################################################################
 
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#attends
-:attends rdf:type owl:ObjectProperty ;
+:attends rdf:type owl:ObjectProperty ,
+                  owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
          rdfs:domain :Person ;
          rdfs:range :Course ;
          rdfs:comment "Instructor teaches a course"@en .
 
 
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#belongsTo
-:belongsTo rdf:type owl:ObjectProperty ;
+:belongsTo rdf:type owl:ObjectProperty ,
+                    owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
            rdfs:domain :Course ;
            rdfs:range :Deparment ;
            rdfs:comment "Course belongs to a Department"@en .
 
 
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#gives
-:gives rdf:type owl:ObjectProperty ;
+:gives rdf:type owl:ObjectProperty ,
+                owl:AsymmetricProperty ,
+                owl:IrreflexiveProperty ;
        rdfs:domain :Subscriber ;
        rdfs:range :Review ;
        rdfs:comment "Subsriber gives review"@en .
 
 
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#has
-:has rdf:type owl:ObjectProperty ;
+:has rdf:type owl:ObjectProperty ,
+              owl:SymmetricProperty ,
+              owl:IrreflexiveProperty ;
      rdfs:domain :Course ;
      rdfs:range :Review .
 
@@ -43,6 +51,8 @@
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#subscribes
 :subscribes rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf :attends ;
+            rdf:type owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
             rdfs:domain :Subscriber ;
             rdfs:range :Course ;
             rdfs:comment "Subscriber subscribes to courses"@en .
@@ -51,13 +61,17 @@
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#teaches
 :teaches rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf :attends ;
+         rdf:type owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
          rdfs:domain :Instructor ;
          rdfs:range :Course ;
          rdfs:comment "Instructor teaches a course"@en .
 
 
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#worksFor
-:worksFor rdf:type owl:ObjectProperty ;
+:worksFor rdf:type owl:ObjectProperty ,
+                   owl:AsymmetricProperty ,
+                   owl:IrreflexiveProperty ;
           rdfs:domain :Instructor ;
           rdfs:range :Deparment .
 
@@ -70,12 +84,6 @@
 :birthdate rdf:type owl:DatatypeProperty ;
            rdfs:domain :Person ;
            rdfs:range xsd:string .
-
-
-###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#contentDuration
-:contentDuration rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :Course ;
-                 rdfs:range xsd:integer .
 
 
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#courseID
@@ -94,6 +102,12 @@
 :courses rdf:type owl:DatatypeProperty ;
          rdfs:domain :Instructor ;
          rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#departmentName
+:departmentName rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Deparment ;
+                rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#description
@@ -132,6 +146,16 @@
                   rdfs:range xsd:integer .
 
 
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#numberOfCourses
+:numberOfCourses rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#numberOfInstructors
+:numberOfInstructors rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Deparment ;
+                     rdfs:range xsd:integer .
+
+
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#numberOfLectures
 :numberOfLectures rdf:type owl:DatatypeProperty ;
                   rdfs:domain :Course ;
@@ -148,6 +172,13 @@
 :numberOfSubscribers rdf:type owl:DatatypeProperty ;
                      rdfs:domain :Course ;
                      rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#placeOfBirth
+:placeOfBirth rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Instructor ;
+              rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#price
@@ -203,12 +234,16 @@
 #################################################################
 
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Course
-:Course rdf:type owl:Class .
+:Course rdf:type owl:Class ;
+        owl:disjointWith :Deparment ,
+                         :Person ,
+                         :Review .
 
 
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Deparment
 :Deparment rdf:type owl:Class ;
-           owl:disjointWith :Review .
+           owl:disjointWith :Person ,
+                            :Review .
 
 
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Instructor
@@ -217,7 +252,8 @@
 
 
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Person
-:Person rdf:type owl:Class .
+:Person rdf:type owl:Class ;
+        owl:disjointWith :Review .
 
 
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Review
@@ -233,38 +269,320 @@
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Bitcoin_or_How_I_Learned_to_Stop_Worrying_and_Love_Crypto
-:Bitcoin_or_How_I_Learned_to_Stop_Worrying_and_Love_Crypto rdf:type owl:NamedIndividual ,
-                                                                    :Course ;
-                                                           :contentDuration 8 ;
-                                                           :courseID 49798 ;
-                                                           :level "All Levels" ;
-                                                           :numberOfLectures 24 ;
-                                                           :numberOfReviews 936 ;
-                                                           :numberOfSubscribers 65576 ;
-                                                           :price "0.0"^^xsd:float ;
-                                                           :publishedTimestamp "2013-04-20T02:25:22Z"^^xsd:dateTime ;
-                                                           :url "https://www.udemy.com/bitcoin-or-how-i-learned-to-stop-worrying-and-love-crypto/"^^xsd:anyURI .
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1> rdf:type owl:NamedIndividual ,
+                                                                              :Deparment ;
+                                                                     :departmentName "Web_Development"^^xsd:string ;
+                                                                     :numberOfCourses 75 ;
+                                                                     :numberOfInstructors 30 .
 
 
-###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Bussines_Finance
-:Bussines_Finance rdf:type owl:NamedIndividual ,
-                           :Deparment .
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1090788
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1090788> rdf:type owl:NamedIndividual ,
+                                                                                    :Course ;
+                                                                           :belongsTo <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1> ;
+                                                                           :courseTitle "First Web Application with Spring Boot"^^xsd:string ;
+                                                                           :level "Beginner Level"^^xsd:string ;
+                                                                           :numberOfLectures 95 ;
+                                                                           :numberOfReviews 2865 ;
+                                                                           :numberOfSubscribers 40 ;
+                                                                           :publishedTimestamp "2017-01-27T16:45:13Z"^^xsd:dateTimeStamp ;
+                                                                           :rating "0.8"^^xsd:string .
 
 
-###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Graphic_Design
-:Graphic_Design rdf:type owl:NamedIndividual ,
-                         :Deparment .
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1152012
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1152012> rdf:type owl:NamedIndividual ,
+                                                                                    :Course ;
+                                                                           :belongsTo <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1> ;
+                                                                           :courseTitle "Adobe Experience Manager CMS Basics"^^xsd:string ;
+                                                                           :level "All Levels"^^xsd:string ;
+                                                                           :numberOfLectures 33 ;
+                                                                           :numberOfReviews 14 ;
+                                                                           :numberOfSubscribers 81 ;
+                                                                           :price 35 ;
+                                                                           :publishedTimestamp "2017-05-02T16:54:56Z"^^xsd:dateTimeStamp ;
+                                                                           :rating "0.46"^^xsd:float ;
+                                                                           :url "https://www.udemy.com/adobe-experience-manager-basics/"^^xsd:string .
 
 
-###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Musical_Instrument
-:Musical_Instrument rdf:type owl:NamedIndividual ,
-                             :Deparment .
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#13
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#13> rdf:type owl:NamedIndividual ,
+                                                                               :Instructor ;
+                                                                      :teaches <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#178044> ;
+                                                                      :worksFor <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#3> ;
+                                                                      :courses 56 ;
+                                                                      :education "Infirmatics"^^xsd:string ;
+                                                                      :name "Lindsay"^^xsd:string ;
+                                                                      :numberOFStudents 234143 ;
+                                                                      :qualification "Graphic Designer,Instructor, Adobe"^^xsd:string ;
+                                                                      :surname "Marsh"^^xsd:string .
 
 
-###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#Web_Development
-:Web_Development rdf:type owl:NamedIndividual ,
-                          :Deparment .
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#16
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#16> rdf:type owl:NamedIndividual ,
+                                                                               :Subscriber ;
+                                                                      :birthdate "14.3.00"^^xsd:dateTime ;
+                                                                      :courses "Bluegrass Guitar Essentials: Webisodes 13, 14, & 15"^^xsd:string ;
+                                                                      :email "williamsajayi@gmail.com"^^xsd:string ;
+                                                                      :name "Williams"^^xsd:string ;
+                                                                      :surname "Ajayi"^^xsd:string ;
+                                                                      :username "Williams Ajayi B."^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#178044
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#178044> rdf:type owl:NamedIndividual ,
+                                                                                   :Course ;
+                                                                          :belongsTo <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#3> ;
+                                                                          :courseTitle "How To Make Graphics For A Website"^^xsd:string ;
+                                                                          :level "All Levels"^^xsd:string ;
+                                                                          :numberOfLectures 11 ;
+                                                                          :numberOfReviews 35 ;
+                                                                          :numberOfSubscribers 24857 ;
+                                                                          :price 200 ;
+                                                                          :publishedTimestamp "2014-03-15T21:53:19Z"^^xsd:dateTimeStamp ;
+                                                                          :rating "0.89"^^xsd:float ;
+                                                                          :url "https://www.udemy.com/how-to-make-graphics-for-a-website/"^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#18
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#18> rdf:type owl:NamedIndividual ,
+                                                                               :Instructor ;
+                                                                      :teaches <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#820194> ;
+                                                                      :worksFor <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#3> ;
+                                                                      :birthdate "22/7/1993"^^xsd:string ;
+                                                                      :courses 37 ;
+                                                                      :education "Informatics"^^xsd:string ;
+                                                                      :name "Diego"^^xsd:string ;
+                                                                      :numberOFStudents 234324 ;
+                                                                      :placeOfBirth "Finland"^^xsd:string ;
+                                                                      :qualification "Enterprenuer, Social Media Innovator"^^xsd:string ;
+                                                                      :surname "Davilla"^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#2
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#2> rdf:type owl:NamedIndividual ,
+                                                                              :Deparment ;
+                                                                     :departmentName "Bussines_Finance"^^xsd:string ;
+                                                                     :numberOfCourses 30 ;
+                                                                     :numberOfInstructors 15 .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#20
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#20> rdf:type owl:NamedIndividual ,
+                                                                               :Subscriber ;
+                                                                      :subscribes <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#640100> ;
+                                                                      :birthdate "7.11.02"^^xsd:dateTime ;
+                                                                      :email "phamhuynh@gmail.com"^^xsd:string ;
+                                                                      :surname "Pham Huynh H"^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#29
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#29> rdf:type owl:NamedIndividual ,
+                                                                               :Subscriber ;
+                                                                      :email "bhakti@gmail.com"^^xsd:string ;
+                                                                      :name "Bhakti"^^xsd:string ;
+                                                                      :username "Bhakti P"^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#3
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#3> rdf:type owl:NamedIndividual ,
+                                                                              :Deparment ;
+                                                                     :departmentName "Graphic Design"^^xsd:string ;
+                                                                     :numberOfCourses 56 ;
+                                                                     :numberOfInstructors 20 .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#33
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#33> rdf:type owl:NamedIndividual ,
+                                                                               :Instructor ;
+                                                                      :worksFor <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1> ;
+                                                                      :courses 17 ;
+                                                                      :education "Bussiness"^^xsd:string ;
+                                                                      :name "Gordan"^^xsd:string ;
+                                                                      :numberOFStudents 3241 ;
+                                                                      :placeOfBirth "Italy"^^xsd:string ;
+                                                                      :qualification "Web designer"^^xsd:string ;
+                                                                      :surname "Candell"^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#34
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#34> rdf:type owl:NamedIndividual ,
+                                                                               :Instructor ;
+                                                                      :teaches <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#437398> ;
+                                                                      :worksFor <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1> ;
+                                                                      :birthdate "28.5.99"^^xsd:string ;
+                                                                      :education "Web designer, Educator;Informatic Engenieering"^^xsd:string ;
+                                                                      :name "Andrei"^^xsd:string ;
+                                                                      :qualification "Senior web developer"^^xsd:string ;
+                                                                      :surname "Neagoie"^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#37
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#37> rdf:type owl:NamedIndividual ,
+                                                                               :Instructor ;
+                                                                      :teaches <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#949282> ;
+                                                                      :worksFor <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1> ;
+                                                                      :birthdate "18/04/1989"^^xsd:string ;
+                                                                      :courses 34 ;
+                                                                      :name "Brad"^^xsd:string ;
+                                                                      :numberOFStudents 234134 ;
+                                                                      :qualification "Front End developer"^^xsd:string ;
+                                                                      :surname "Hussey"^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#39
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#39> rdf:type owl:NamedIndividual ,
+                                                                               :Instructor ;
+                                                                      :worksFor <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1> ;
+                                                                      :courses 29 ;
+                                                                      :education "Informatic Engenieering"^^xsd:string ;
+                                                                      :name "Jose"^^xsd:string ;
+                                                                      :numberOFStudents 123132 ;
+                                                                      :placeOfBirth "germany"^^xsd:string ;
+                                                                      :qualification "Senior web developer"^^xsd:string ;
+                                                                      :surname "Portilla"^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#4
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#4> rdf:type owl:NamedIndividual ,
+                                                                              :Deparment ;
+                                                                     :departmentName "Musical_Instrument"^^xsd:string ;
+                                                                     :numberOfCourses 27 ;
+                                                                     :numberOfInstructors 14 .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#41
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#41> rdf:type owl:NamedIndividual ,
+                                                                               :Subscriber ;
+                                                                      :birthdate "28.5.99"^^xsd:dateTime ;
+                                                                      :email "avnit@gmail.com"^^xsd:string ;
+                                                                      :name "Avni"^^xsd:string ;
+                                                                      :surname "Tannty"^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#42
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#42> rdf:type owl:NamedIndividual ,
+                                                                               :Instructor ;
+                                                                      :teaches <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1152012> ;
+                                                                      :worksFor <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1> ;
+                                                                      :courses 19 ;
+                                                                      :education "Informatics"^^xsd:string ;
+                                                                      :name "Rob"^^xsd:string ;
+                                                                      :numberOFStudents 455245 ;
+                                                                      :placeOfBirth "Denmark"^^xsd:string ;
+                                                                      :qualification "Senior C++ developer"^^xsd:string ;
+                                                                      :surname "Percival"^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#43
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#43> rdf:type owl:NamedIndividual ,
+                                                                               :Instructor ;
+                                                                      :teaches <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1090788> ;
+                                                                      :worksFor <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1> ;
+                                                                      :birthdate "10/04/1895"^^xsd:string ;
+                                                                      :courses 19 ;
+                                                                      :education "Economic Informatics"^^xsd:string ;
+                                                                      :name "Angela"^^xsd:string ;
+                                                                      :numberOFStudents 455245 ;
+                                                                      :qualification "Developer, Lead Instructor"^^xsd:string ;
+                                                                      :surname "Yu"^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#437398
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#437398> rdf:type owl:NamedIndividual ,
+                                                                                   :Course ;
+                                                                          :belongsTo <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1> ;
+                                                                          :courseTitle "Build Responsive Real World Websites with HTML5 and CSS3"^^xsd:string ;
+                                                                          :level "All Levels"^^xsd:string ;
+                                                                          :numberOfLectures 43977 ;
+                                                                          :publishedTimestamp "2015-03-24T22:06:26Z"^^xsd:dateTimeStamp ;
+                                                                          :rating "0.34"^^xsd:float ;
+                                                                          :url "https://www.udemy.com/design-and-develop-a-killer-website-with-html5-and-css3/"^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#49798
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#49798> rdf:type owl:NamedIndividual ,
+                                                                                  :Course ;
+                                                                         :belongsTo <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1> ;
+                                                                         :courseID 49798 ;
+                                                                         :courseTitle "Bitcoin or How I Learned to Stop Worrying and Love Crypto"^^xsd:string ;
+                                                                         :level "All Levels" ;
+                                                                         :numberOfLectures 24 ;
+                                                                         :numberOfReviews 936 ;
+                                                                         :numberOfSubscribers 65576 ;
+                                                                         :price "0.0"^^xsd:float ;
+                                                                         :publishedTimestamp "2013-04-20T02:25:22Z"^^xsd:dateTime ;
+                                                                         :url "https://www.udemy.com/bitcoin-or-how-i-learned-to-stop-worrying-and-love-crypto/"^^xsd:anyURI .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#640100
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#640100> rdf:type owl:NamedIndividual ,
+                                                                                   :Course ;
+                                                                          :belongsTo <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#2> ;
+                                                                          :courseTitle "Accounting & Financial Statement Analysis: Complete Training"^^xsd:string ;
+                                                                          :level "Beginner Level"^^xsd:string ;
+                                                                          :numberOfLectures 43 ;
+                                                                          :numberOfReviews 594 ;
+                                                                          :numberOfSubscribers 10042 ;
+                                                                          :price 150 ;
+                                                                          :publishedTimestamp "2015-10-22T00:03:48Z"^^xsd:dateTimeStamp ;
+                                                                          :rating "0.81"^^xsd:float ;
+                                                                          :url "https://www.udemy.com/accounting-fsa-a-solid-foundation-for-a-career-in-finance/"^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#719002
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#719002> rdf:type owl:NamedIndividual ,
+                                                                                   :Course ;
+                                                                          :belongsTo <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1> ;
+                                                                          :courseTitle "Angular 2 with TypeScript for Beginners: The Pragmatic Guide"^^xsd:string ;
+                                                                          :level "All Levels"^^xsd:string ;
+                                                                          :numberOfLectures 8341 ;
+                                                                          :numberOfReviews 150 ,
+                                                                                           40070 ;
+                                                                          :publishedTimestamp "2016-03-03T20:17:59Z"^^xsd:dateTimeStamp ;
+                                                                          :rating "0.74"^^xsd:float ;
+                                                                          :url "https://www.udemy.com/angular-2-tutorial-for-beginners/;150;40070;8341"^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#820194
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#820194> rdf:type owl:NamedIndividual ,
+                                                                                   :Course ;
+                                                                          :belongsTo <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#3> ;
+                                                                          :courseTitle "Photoshop for Entrepreneurs - Design 11 Practical Projects"^^xsd:string ;
+                                                                          :level "All Levels"^^xsd:string ;
+                                                                          :numberOfLectures 63 ;
+                                                                          :numberOfReviews 737 ;
+                                                                          :numberOfSubscribers 36288 ;
+                                                                          :price 200 ;
+                                                                          :publishedTimestamp "2016-06-09T01:57:03Z"^^xsd:dateTimeStamp ;
+                                                                          :rating "0.96"^^xsd:float ;
+                                                                          :url "https://www.udemy.com/photoshop-for-entrepreneurs"^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#839032
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#839032> rdf:type owl:NamedIndividual ,
+                                                                                   :Course ;
+                                                                          :belongsTo <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#4> ;
+                                                                          :courseTitle "Bluegrass Guitar Essentials: Webisodes 13, 14, & 15"^^xsd:string ;
+                                                                          :level "All Levels"^^xsd:string ;
+                                                                          :numberOfLectures 41 ;
+                                                                          :numberOfReviews 52 ;
+                                                                          :numberOfSubscribers 10338 ;
+                                                                          :price 30 ;
+                                                                          :publishedTimestamp "2016-12-15T03:58:40Z"^^xsd:dateTimeStamp ;
+                                                                          :url "https://www.udemy.com/bluegrass-guitar-essentials-webisodes-13-14-15/"^^xsd:string .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#949282
+<http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#949282> rdf:type owl:NamedIndividual ,
+                                                                                   :Course ;
+                                                                          :belongsTo <http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#1> ;
+                                                                          :courseTitle "Learn Angular 2 from Beginner to Advanced"^^xsd:string ;
+                                                                          :level "0.7"^^xsd:float ,
+                                                                                 "Beginner Level"^^xsd:string ;
+                                                                          :numberOfLectures 526 ;
+                                                                          :numberOfSubscribers 195 ;
+                                                                          :url "https://www.udemy.com/learn-angular-2-from-beginner-to-advanced/"^^xsd:string .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
