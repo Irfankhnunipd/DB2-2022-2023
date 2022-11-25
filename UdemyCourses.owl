@@ -13,15 +13,6 @@
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#attends
-:attends rdf:type owl:ObjectProperty ,
-                  owl:AsymmetricProperty ,
-                  owl:IrreflexiveProperty ;
-         rdfs:domain :Person ;
-         rdfs:range :Course ;
-         rdfs:comment "Instructor teaches a course"@en .
-
-
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#belongsTo
 :belongsTo rdf:type owl:ObjectProperty ,
                     owl:AsymmetricProperty ,
@@ -50,7 +41,7 @@
 
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#subscribes
 :subscribes rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :attends ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
             rdf:type owl:AsymmetricProperty ,
                      owl:IrreflexiveProperty ;
             rdfs:domain :Subscriber ;
@@ -60,7 +51,7 @@
 
 ###  http://www.semanticweb.org/user/ontologies/2022/10/udemy-courses#teaches
 :teaches rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf :attends ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
          rdf:type owl:AsymmetricProperty ,
                   owl:IrreflexiveProperty ;
          rdfs:domain :Instructor ;
